@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: Name
+        span: left
+        type: text
+    email:
+        label: Email
+        span: right
+        type: text
+    rating:
+        label: Rating
+        type: radio
+        options:
+            null: None
+            1: 1 star
+            2: 2 stars
+            3: 3 stars
+            4: 4 stars
+            5: 5 stars
+    approved:
+        label: Approved
+        span: full
+        type: checkbox
+    content:
+        label: Text
+        type: textarea
+        size: medium
+        span: full

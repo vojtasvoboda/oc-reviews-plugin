@@ -1,0 +1,33 @@
+columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true
+    rating:
+        label: Rating
+        sortable: true
+    content:
+        label: Text
+        type: text
+        searchable: true
+        sortable: true
+    approved:
+        label: Approved
+        sortable: true
+        type: switch
+    created_at:
+        label: Created At
+        type: datetime
+        searchable: true
+        sortable: true
+        format: d.m.Y H:i:s
