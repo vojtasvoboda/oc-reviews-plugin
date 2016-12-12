@@ -22,8 +22,11 @@ with customers reviews:
 
 ## TODO
 
+- [ ] add rating stars instead of dropdown
+- [ ] add sorting reviews
+- [ ] config for stars order (ltr, rtl)
+- [ ] config for number of stars
 - [ ] create Rating form widget (and push it to October Core)
 - [ ] avarage reviews graph (above the listing)
 - [ ] graph of non approved reviews
 - [ ] email when new review created and needs to be approved
-- [ ] config for number of stars

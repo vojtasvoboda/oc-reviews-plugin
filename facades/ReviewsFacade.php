@@ -29,7 +29,7 @@ class ReviewsFacade
      */
     public function getApprovedReviews()
     {
-        return $this->reviews->isApproved()->get();
+        return $this->reviews->isApproved()->orderBy('sort_order')->get();
     }
 
     /**
@@ -39,6 +39,6 @@ class ReviewsFacade
      */
     public function getNonApprovedReviews()
     {
-        return $this->reviews->notApproved()->get();
+        return $this->reviews->notApproved()->orderBy('sort_order')->get();
     }
 }

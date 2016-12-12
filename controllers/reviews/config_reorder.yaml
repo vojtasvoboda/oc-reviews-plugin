@@ -1,0 +1,5 @@
+title: Reviews
+modelClass: VojtaSvoboda\Reviews\Models\Review
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

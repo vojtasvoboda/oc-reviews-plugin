@@ -29,10 +29,10 @@ showSorting: true
 # Default sorting column
 defaultSort:
     column: sort_order
-    direction: desc
+    direction: asc
 
 # Display checkboxes next to each record
-# showCheckboxes: true
+showCheckboxes: true
 
 # Toolbar widget configuration
 toolbar:
