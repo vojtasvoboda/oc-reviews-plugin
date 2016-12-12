@@ -1,0 +1,22 @@
+{% macro rating(value, stars = 5) %}
+<span class="stars">
+    {% for star in 1..stars %}
+    <i class="fa fa-star{% if star > value %}-o{% endif %}" aria-hidden="true"></i>
+    {% endfor %}
+    <span>{{ value }} of {{ stars }} stars</span>
+</span>
+{% endmacro %}
+
+{% import _self as macros %}
+
+<div id="customers-carousel" class="owl-carousel owl-theme">
+    {% for review in __SELF__.reviews %}
+    <div class="item">
+        {{ macros.rating(review.rating) }}
+        <div class="text">
+            <h4>{{ review.name }}</h4>
+            <p>{{ review.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

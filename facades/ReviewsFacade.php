@@ -1,16 +1,18 @@
 <?php namespace VojtaSvoboda\Reviews\Facades;
 
+use VojtaSvoboda\Reviews\Models\Review;
+
 class ReviewsFacade
 {
-    /** @var Reviews $reviews */
+    /** @var Review $reviews */
     private $reviews;
 
     /**
      * ReviewsFacade constructor.
      *
-     * @param Reviews $reviews
+     * @param Review $reviews
      */
-    public function __construct(Reviews $reviews)
+    public function __construct(Review $reviews)
     {
         $this->reviews = $reviews;
     }
@@ -27,7 +29,7 @@ class ReviewsFacade
      */
     public function getApprovedReviews()
     {
-        return $this->reviews->approved()->get();
+        return $this->reviews->isApproved()->get();
     }
 
     /**

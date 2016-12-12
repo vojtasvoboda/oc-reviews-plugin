@@ -28,7 +28,7 @@ class Plugin extends PluginBase
                 'url' => Backend::url('vojtasvoboda/reviews/reviews'),
                 'icon' => 'icon-star-half-o',
                 'permissions' => ['vojtasvoboda.reviews.*'],
-                'order' => 500,
+                'order' => 510,
                 'sideMenu' => [
                     'reviews' => [
                         'label' => 'Reviews',
@@ -45,8 +45,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            // 'VojtaSvoboda\Reviews\Components\ReviewForm' => 'reviewForm',
+            'VojtaSvoboda\Reviews\Components\Reviews' => 'reviews',
         ];
     }
-
 }

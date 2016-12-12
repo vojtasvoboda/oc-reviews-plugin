@@ -58,7 +58,7 @@ class Review extends Model
      *
      * @return mixed
      */
-    public function scopeApproved($query)
+    public function scopeIsApproved($query)
     {
         return $query->where('approved', true);
     }
