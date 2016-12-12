@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Config;
 use Model;
 use October\Rain\Database\Traits\SoftDelete as SoftDeleteTrait;
+use October\Rain\Database\Traits\Sortable as SortableTrait;
 use October\Rain\Database\Traits\Validation as ValidationTrait;
 use Request;
 use Str;
@@ -17,6 +18,8 @@ use Str;
 class Review extends Model
 {
     use SoftDeleteTrait;
+
+    use SortableTrait;
 
     use ValidationTrait;
 

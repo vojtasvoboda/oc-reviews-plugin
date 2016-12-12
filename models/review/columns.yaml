@@ -25,6 +25,9 @@ columns:
         label: Approved
         sortable: true
         type: switch
+    sort_order:
+        label: Sort order
+        sortable: true
     created_at:
         label: Created At
         type: datetime

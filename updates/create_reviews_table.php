@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->char('rating', 1)->nullable();
             $table->text('content')->nullable();
             $table->boolean('approved')->default(true);
+            $table->boolean('sort_order')->nullable();
 
             $table->char('hash', 32);
             $table->char('locale', 10)->nullable();
