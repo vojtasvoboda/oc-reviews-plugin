@@ -48,4 +48,11 @@ class Plugin extends PluginBase
             'VojtaSvoboda\Reviews\Components\Reviews' => 'reviews',
         ];
     }
+
+    public function registerFormWidgets()
+    {
+        return [
+            'VojtaSvoboda\Reviews\FormWidgets\StarRating' => 'starrating',
+        ];
+    }
 }
