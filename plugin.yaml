@@ -1,0 +1,9 @@
+plugin:
+    name: 'Reviews'
+    description: 'Provide customers reviews for your websites.'
+    author: 'Vojta Svoboda'
+    icon: icon-star-half-o
+permissions:
+    vojtasvoboda.reviews.reviews:
+        tab: Reviews management
+        label: Reviews management

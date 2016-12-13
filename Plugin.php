@@ -10,16 +10,6 @@ class Plugin extends PluginBase
         $this->app->bind('vojtasvoboda.reviews.facade', 'VojtaSvoboda\Reviews\Facades\ReviewsFacade');
     }
 
-    public function pluginDetails()
-    {
-        return [
-            'name' => 'Reviews',
-            'description' => 'Provide customers reviews for your websites.',
-            'author' => 'Vojta Svoboda',
-            'icon' => 'icon-star-half-o',
-        ];
-    }
-
     public function registerNavigation()
     {
         return [
