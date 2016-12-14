@@ -16,6 +16,11 @@ columns:
     rating:
         label: Rating
         sortable: true
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
     content:
         label: Text
         type: text

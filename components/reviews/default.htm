@@ -14,8 +14,9 @@
     <div class="item">
         {{ macros.rating(review.rating) }}
         <div class="text">
-            <h4>{{ review.name }}</h4>
+            <h4>{{ review.title }}</h4>
             <p>{{ review.content }}</p>
+            <h4>{{ review.name }}</h4>
         </div>
     </div>
     {% endfor %}

@@ -36,7 +36,7 @@ class Review extends Model
     ];
 
     public $fillable = [
-        'email', 'name', 'rating', 'content', 'approved',
+        'email', 'name', 'title', 'rating', 'content', 'approved',
     ];
 
     public $dates = ['created_at', 'updated_at', 'deleted_at'];
