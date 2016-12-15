@@ -1,7 +1,7 @@
 # Review plugin for OctoberCMS
 
+[![Build Status](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/build-status/master)
 [![Codacy](https://img.shields.io/codacy/60a4250bf80740808d007c3338e3f745.svg)](https://www.codacy.com/app/vojtasvoboda/oc-reservations-plugin)
-[![Code Coverage](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-reviews-plugin/blob/master/LICENSE)
 
 Show reviews, ratings or testimonials of your customers. No other plugin dependency. Tested with latest OctoberCMS build 389.
