@@ -1,5 +1,9 @@
 # Review plugin for OctoberCMS
 
+[![Codacy](https://img.shields.io/codacy/60a4250bf80740808d007c3338e3f745.svg)](https://www.codacy.com/app/vojtasvoboda/oc-reservations-plugin)
+[![Code Coverage](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-reviews-plugin/?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-reviews-plugin/blob/master/LICENSE)
+
 Show reviews, ratings or testimonials of your customers. No other plugin dependency. Tested with latest OctoberCMS build 389.
 
 - reviews management with **sort order** and **bulk actions**
@@ -44,3 +48,11 @@ $facade->findOne($value, $key);
 - [ ] avarage reviews graph (above the reviews listing)
 - [ ] graph of non approved reviews
 - [ ] email when new review created and needs to be approved
+
+## Contributing
+
+Please send Pull Request to the master branch.
+
+## License
+
+Reviews plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
