@@ -10,10 +10,6 @@ fields:
     rating:
         label: Rating
         type: starrating
-    approved:
-        label: Approved
-        span: full
-        type: checkbox
     title:
         label: Title
     content:
@@ -21,3 +17,7 @@ fields:
         type: textarea
         size: medium
         span: full
+    approved:
+        label: Approved
+        span: full
+        type: checkbox

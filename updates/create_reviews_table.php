@@ -16,7 +16,7 @@ class CreateReviewsTable extends Migration
             $table->string('email', 300)->nullable();
             $table->string('name', 300)->nullable();
             $table->string('title', 300)->nullable();
-            $table->char('rating', 1)->nullable();
+            $table->smallInteger('rating', 1)->nullable();
             $table->text('content')->nullable();
             $table->boolean('approved')->default(true);
             $table->boolean('sort_order')->nullable();

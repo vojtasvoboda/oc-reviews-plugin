@@ -2,8 +2,13 @@ $(document).ready(function() {
 
     $(".rateyo").each(function() {
 
+        var rating = 0;
+        if (typeof $(this).data("input-id") !== "undefined") {
+            rating = 0 + $("#" + $(this).data("input-id")).val();
+        }
+
         $(this).rateYo({
-            rating: typeof $(this).data("input-id") !== "undefined" ? parseInt($("#" + $(this).data("input-id")).val()) : 0,
+            rating: rating,
             numStars: 5,
             minValue: 1,
             maxValue: 5,

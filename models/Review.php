@@ -29,10 +29,10 @@ class Review extends Model
     /** @var array Rules */
     public $rules = [
         'name' => 'required|max:300',
-        'email' => 'required|email',
+        'email' => 'email',
         'rating' => 'numeric',
         'approved' => 'boolean',
-        'content' => 'required|max:3000',
+        'content' => 'required|min:6|max:3000',
     ];
 
     public $fillable = [
@@ -55,7 +55,7 @@ class Review extends Model
     }
 
     /**
-     * Scope for getting non approved reviews.
+     * Scope for getting approved reviews.
      *
      * @param $query
      *
@@ -79,7 +79,7 @@ class Review extends Model
     }
 
     /**
-     * Set machine scope
+     * Set machine scope.
      *
      * @param $query
      *
@@ -95,7 +95,7 @@ class Review extends Model
     }
 
     /**
-     * If some message exists in last one minute
+     * If some message exists in last 30 seconds.
      *
      * @return bool
      */

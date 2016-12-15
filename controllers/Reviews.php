@@ -24,4 +24,18 @@ class Reviews extends Controller
 
         BackendMenu::setContext('VojtaSvoboda.Reviews', 'reviews', 'reviews');
     }
+
+    public function listOverrideColumnValue($record, $columnName, $definition = null)
+    {
+        if ($columnName == 'rating') {
+            $starsCount = 5;
+            $rating = intval($record->rating);
+
+            return
+                '<span style="display:inline-block;min-width:62px;">' .
+                str_repeat('<i class="icon-star"></i>', $rating) .
+                str_repeat('<i class="icon-star-o"></i>', $starsCount - $rating) .
+                '</span>';
+        }
+    }
 }

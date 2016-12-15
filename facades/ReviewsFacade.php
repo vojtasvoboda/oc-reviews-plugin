@@ -2,6 +2,11 @@
 
 use VojtaSvoboda\Reviews\Models\Review;
 
+/**
+ * Main plugin facade. You should call this methods a priority.
+ *
+ * @package VojtaSvoboda\Reviews\Facades
+ */
 class ReviewsFacade
 {
     /** @var Review $reviews */
@@ -17,15 +22,22 @@ class ReviewsFacade
         $this->reviews = $reviews;
     }
 
+    /**
+     * Create new review.
+     *
+     * @param array $data
+     *
+     * @return array
+     */
     public function storeReview(array $data)
     {
-        // TODO
+        return $this->reviews->create($data);
     }
 
     /**
      * Get approved reviews (for displaying at frontend).
      *
-     * @return mixed
+     * @return array
      */
     public function getApprovedReviews()
     {
@@ -35,10 +47,23 @@ class ReviewsFacade
     /**
      * Get non approved reviews (for admin approval).
      *
-     * @return mixed
+     * @return array
      */
     public function getNonApprovedReviews()
     {
         return $this->reviews->notApproved()->orderBy('sort_order')->get();
+    }
+
+    /**
+     * Find one review.
+     *
+     * @param $value
+     * @param string $key
+     *
+     * @return Review
+     */
+    public function findOne($value, $key = 'id')
+    {
+        return $this->reviews->where($key, $value)->first();
     }
 }
