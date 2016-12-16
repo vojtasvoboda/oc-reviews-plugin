@@ -1,0 +1,28 @@
+{
+    "name": "vojtasvoboda/oc-reviews-plugin",
+    "type": "october-plugin",
+    "extra": {
+        "installer-name": "reviews"
+    },
+    "description": "Reviews plugin for OctoberCMS",
+    "homepage": "https://github.com/vojtasvoboda/oc-reviews-plugin",
+    "keywords": ["october", "plugin", "reviews"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vojta Svoboda",
+            "email": "vojtasvoboda.cz@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0"
+    },
+    "minimum-stability": "dev",
+    "scripts": {
+        "build": [
+            "@composer install --no-progress --no-interaction --no-suggest"
+        ]
+    }
+}
