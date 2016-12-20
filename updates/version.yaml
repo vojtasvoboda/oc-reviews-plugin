@@ -1,3 +1,4 @@
 1.0.1:
     - First version of Reviews
     - create_reviews_table.php
+1.0.2: Fix getting value from empty rating

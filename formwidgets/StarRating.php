@@ -32,6 +32,10 @@ class StarRating extends FormWidgetBase
 
     public function getSaveValue($value)
     {
+    	if (!is_numeric($value)) {
+    		return null;
+    	}
+
         return $value;
     }
 }
