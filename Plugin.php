@@ -27,6 +27,13 @@ class Plugin extends PluginBase
                         'permissions' => ['vojtasvoboda.reviews.reviews'],
                         'order' => 100,
                     ],
+                    'categories' => [
+                        'permissions' => ['vojtasvoboda.reviews.categories'],
+                        'label' => 'Categories',
+                        'icon' => 'icon-folder',
+                        'url' => Backend::url('vojtasvoboda/reviews/categories'),
+                        'order' => 200,
+                    ],
                 ],
             ],
         ];

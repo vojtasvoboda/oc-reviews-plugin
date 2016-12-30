@@ -41,6 +41,16 @@ class Review extends Model
 
     public $dates = ['created_at', 'updated_at', 'deleted_at'];
 
+    public $belongsToMany = [
+        'categories' => [
+            'VojtaSvoboda\Reviews\Models\Category',
+            'table' => 'vojtasvoboda_reviews_review_category',
+            'order' => 'name asc',
+            'scope' => 'isEnabled',
+            'timestamps' => true,
+        ]
+    ];
+
     /**
      * Before create review.
      */
