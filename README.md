@@ -7,7 +7,7 @@
 Show reviews, ratings or testimonials of your customers. No other plugin dependency. Tested with latest OctoberCMS build 389.
 
 - reviews management with **sort order** and **bulk actions**
-- **rating by stars**
+- **rating by stars**, sorting to **categories**
 - component build with **HTML5 markup** using \<figure\> and \<cite\>
 - internal methods for creating new reviews, get approved reviews etc.
 
