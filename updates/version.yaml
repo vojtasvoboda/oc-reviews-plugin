@@ -6,3 +6,4 @@
     - Add review categories
     - create_categories_table.php
     - create_review_category_table.php
+1.0.4: Add support for RainLab.Translate

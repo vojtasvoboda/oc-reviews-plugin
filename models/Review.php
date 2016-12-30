@@ -23,6 +23,8 @@ class Review extends Model
 
     use ValidationTrait;
 
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+
     /** @var string $table The database table used by the model */
     public $table = 'vojtasvoboda_reviews_reviews';
 
@@ -34,6 +36,8 @@ class Review extends Model
         'approved' => 'boolean',
         'content' => 'required|min:6|max:3000',
     ];
+
+    public $translatable = ['name', 'title', 'content'];
 
     public $fillable = [
         'email', 'name', 'title', 'rating', 'content', 'approved',

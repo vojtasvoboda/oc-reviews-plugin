@@ -47,7 +47,7 @@ class ReviewsFacade
         $query = $this->reviews->isApproved()->orderBy('sort_order');
 
         if ($category !== null) {
-            $query->whereHas('categories', function ($query) use ($category) {
+            $query->whereHas('categories', function($query) use ($category) {
                 $query->where('category_id', $category->id);
             });
         }
