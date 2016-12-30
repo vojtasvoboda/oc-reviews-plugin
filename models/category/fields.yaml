@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        span: left
+        searchable: true
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: name
+            type: slug
+    enabled:
+        label: Enabled
+        type: switch
+        default: true
+    description:
+        label: Description
+        type: richeditor
+        searchable: false

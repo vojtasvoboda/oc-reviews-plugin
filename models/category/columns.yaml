@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Name
+        searchable: true
+        sortable: true
+    slug:
+        label: Slug
+        searchable: true
+        sortable: true
+    sort_order:
+        label: Sort order
+        sortable: true
+    enabled:
+        label: Enabled
+        type: switch
+        sortable: true

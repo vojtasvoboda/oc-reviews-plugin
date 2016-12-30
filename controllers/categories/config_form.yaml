@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/vojtasvoboda/reviews/models/category/fields.yaml
+
+# Model Class name
+modelClass: VojtaSvoboda\Reviews\Models\Category
+
+# Default redirect location
+defaultRedirect: vojtasvoboda/reviews/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: vojtasvoboda/reviews/categories/update/:id
+    redirectClose: vojtasvoboda/reviews/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: vojtasvoboda/reviews/categories
+    redirectClose: vojtasvoboda/reviews/categories
+
+# Preview page
+preview:
+    title: Preview Category

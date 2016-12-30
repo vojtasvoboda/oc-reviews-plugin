@@ -1,5 +1,6 @@
 <?php namespace VojtaSvoboda\Reviews\Facades;
 
+use VojtaSvoboda\Reviews\Models\Category;
 use VojtaSvoboda\Reviews\Models\Review;
 
 /**
@@ -37,11 +38,21 @@ class ReviewsFacade
     /**
      * Get approved reviews (for displaying at frontend).
      *
+     * @param Category $category Filter results by category.
+     *
      * @return array
      */
-    public function getApprovedReviews()
+    public function getApprovedReviews($category = null)
     {
-        return $this->reviews->isApproved()->orderBy('sort_order')->get();
+        $query = $this->reviews->isApproved()->orderBy('sort_order');
+
+        if ($category !== null) {
+            $query->whereHas('categories', function ($query) use ($category) {
+                $query->where('category_id', $category->id);
+            });
+        }
+
+        return $query->get();
     }
 
     /**

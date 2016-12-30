@@ -10,14 +10,24 @@ fields:
     rating:
         label: Rating
         type: starrating
-    title:
-        label: Title
-    content:
-        label: Text
-        type: textarea
-        size: medium
-        span: full
-    approved:
-        label: Approved
-        span: full
-        type: checkbox
+tabs:
+    fields:
+        title:
+            tab: General
+            label: Title
+        content:
+            tab: General
+            label: Text
+            type: textarea
+            size: medium
+            span: full
+        approved:
+            tab: General
+            label: Approved
+            span: full
+            type: checkbox
+        categories:
+            tab: Categories
+            label: Categories
+            type: relation
+            nameFrom: name

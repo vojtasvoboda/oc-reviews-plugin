@@ -3,6 +3,7 @@
 use App;
 use Cms\Classes\ComponentBase;
 use VojtaSvoboda\Reviews\Facades\ReviewsFacade;
+use VojtaSvoboda\Reviews\Models\Category;
 
 class Reviews extends ComponentBase
 {
@@ -18,26 +19,53 @@ class Reviews extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'categoryFilter' => [
+                'title' => 'Category identifier',
+                'description' => 'Show only reviews from some category by slug',
+                'type' => 'string',
+                'default' => '{{ :category }}',
+            ],
+        ];
     }
 
     public function onRun()
     {
-        $this->page['reviews'] = $this->reviews();
+        // category filter
+        $category = null;
+        if ($categorySlug = $this->property('categoryFilter')) {
+            $category = $this->getCategory($categorySlug);
+        }
+        $this->page['category'] = $category;
+        $this->page['reviews'] = $this->reviews($category);
     }
 
     /**
      * Get reviews.
      *
+     * @param Category $category Filter by category.
+     *
      * @return mixed
      */
-    public function reviews()
+    public function reviews($category = null)
     {
         if ($this->reviews === null) {
-            $this->reviews = $this->getFacade()->getApprovedReviews();
+            $this->reviews = $this->getFacade()->getApprovedReviews($category);
         }
 
         return $this->reviews;
+    }
+
+    /**
+     * Get category by slug.
+     *
+     * @param $category
+     *
+     * @return mixed
+     */
+    public function getCategory($category)
+    {
+        return Category::where('slug', $category)->first();
     }
 
     /**
