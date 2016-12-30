@@ -7,3 +7,6 @@ permissions:
     vojtasvoboda.reviews.reviews:
         tab: Review management
         label: Review management
+    vojtasvoboda.reviews.categories:
+        tab: Review management
+        label: Review categories management
