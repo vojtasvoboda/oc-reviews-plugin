@@ -13,12 +13,12 @@ Show reviews, ratings or testimonials of your customers. No other plugin depende
 
 ## Show reviews
 
-Just place component Reviews to your page. You can also use `reviews.reviews` to access component data.
+Just place component Reviews to your page.
 
 ```
 [reviews]
 ==
-{% if reviews.reviews is not empty %}
+{% if reviews is not empty %}
 <div class="reviews">
     <h3>What our customers say about us?</h3>
     <div class="stories">
