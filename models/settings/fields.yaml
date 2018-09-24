@@ -1,0 +1,24 @@
+tabs:
+    fields:
+
+        recaptcha_help:
+            type: partial
+            path: $/vojtasvoboda/reviews/models/settings/_recaptcha_help.htm
+            tab: 'Recaptcha'
+
+        recaptcha_enabled:
+            label: 'Recaptcha enabe'
+            type: switch
+            tab: 'Recaptcha'
+
+        site_key:
+            label: 'Recaptcha site key'
+            span: left
+            type: text
+            tab: 'Recaptcha'
+
+        secret_key:
+            label: 'Recaptcha secret key'
+            span: right
+            type: text
+            tab: 'Recaptcha'

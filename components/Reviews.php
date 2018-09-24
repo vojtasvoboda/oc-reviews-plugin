@@ -2,6 +2,7 @@
 
 use App;
 use Cms\Classes\ComponentBase;
+use VojtaSvoboda\Reviews\Models\Settings;
 use VojtaSvoboda\Reviews\Facades\ReviewsFacade;
 use VojtaSvoboda\Reviews\Models\Category;
 
@@ -38,6 +39,18 @@ class Reviews extends ComponentBase
         }
         $this->page['category'] = $category;
         $this->page['reviews'] = $this->reviews($category);
+    }
+
+    /**
+     * @return array
+     */
+    public function settings()
+    {
+        return [
+            'recaptcha_enabled' => Settings::get('recaptcha_enabled', false),
+            'site_key' => Settings::get('site_key', false)
+        ];
+
     }
 
     /**

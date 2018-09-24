@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 
 class Plugin extends PluginBase
 {
@@ -36,6 +37,32 @@ class Plugin extends PluginBase
                     ],
                 ],
             ],
+        ];
+    }
+
+    public function registerSettings() {
+        return [
+            'config' => [
+                'label'       => 'Reviews',
+                'description' => 'Add customers reviews and testimonials to your sites.',
+                'category'    => SettingsManager::CATEGORY_CMS,
+                // 'icon'        => 'icon-bolt',
+                'class'       => 'VojtaSvoboda\Reviews\Models\Settings',
+                'permissions' => ['vojtasvoboda.reviews.settings'],
+                'order'       => 500
+            ]
+        ];
+    }
+
+    public function registerPermissions()
+    {
+        return [
+            'vojtasvoboda.reviews.settings' => [
+                'tab'   => 'vojtasvoboda.reviews::lang.menu.reviews',
+                'label' => 'vojtasvoboda.reviews::lang.permission.reviews',
+                'order' => 100,
+                'roles' => ['publisher']
+            ]
         ];
     }
 
