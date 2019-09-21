@@ -28,6 +28,10 @@ Just place component Reviews to your page.
 {% endif %}
 ```
 
+## Dependencies
+
+This plugin using [https://fontawesome.com/](https://fontawesome.com/) classes to show stars at Reviews front-end component. You have to include this library or [override Reviews component](https://octobercms.com/docs/cms/components#overriding-partials) to use your own icons.
+
 ## Public facade
 
 You can use plugin's facade **vojtasvoboda.reviews.facade** with this public methods:
