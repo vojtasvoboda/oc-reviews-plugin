@@ -1,5 +1,5 @@
 {
-    "name": "vojtasvoboda/oc-reviews-plugin",
+    "name": "vojtasvoboda/reviews-plugin",
     "type": "october-plugin",
     "extra": {
         "installer-name": "reviews"
