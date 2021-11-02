@@ -16,7 +16,7 @@ class ChangeSortOrderColumnType extends Migration
 
     public function down()
     {
-        Schema::table('vdlp_redirect_clients', static function (Blueprint $table) {
+        Schema::table('vojtasvoboda_reviews_reviews', static function (Blueprint $table) {
             $table->boolean('sort_order')->nullable()->change();
         });
     }
