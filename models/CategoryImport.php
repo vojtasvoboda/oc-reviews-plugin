@@ -46,9 +46,8 @@ class CategoryImport extends ImportModel
                 foreach (array_except($data, $except) as $attribute => $value) {
                     $category->{$attribute} = $value ?: null;
                 }
-                if ($enabled = array_get($data, 'enabled')) {
-                    $category->enabled = (bool)$enabled;
-                }
+
+                $category->enabled = !!array_get($data,'enabled');
 
                 $category->forceSave();
 
