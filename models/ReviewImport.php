@@ -40,18 +40,13 @@ class ReviewImport extends ImportModel
 
                 $reviewExists = $review->exists;
 
-                $except = ['id', 'categories','approved','created_at'];
+                $except = ['id', 'categories', 'approved', 'created_at'];
 
                 foreach (array_except($data, $except) as $attribute => $value) {
-
-                    if (in_array($attribute, $review->getDates()) && empty($value)) {
-                        continue;
-                    }
-
                     $review->{$attribute} = $value ?: null;
                 }
 
-                $review->approved = !!array_get($data,'approved');
+                $review->approved = !!array_get($data, 'approved');
 
                 if ($createdAt = array_get($data, 'created_at')) {
                     $review->created_at = Carbon::parse($createdAt);
