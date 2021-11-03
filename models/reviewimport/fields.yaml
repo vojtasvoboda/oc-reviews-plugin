@@ -7,5 +7,5 @@ fields:
         label: Update existing reviews
         comment: Check this box to update categories that have exactly the same ID
         type: checkbox
-        default: true
+        default: false
         span: left

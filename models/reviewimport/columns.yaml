@@ -4,9 +4,9 @@
 
 columns:
     id: ID
-    email: Email
     categories: Categories
     name: Author name
+    email: Author email
     title: Title
     rating: Rating
     content: Content

@@ -13,10 +13,11 @@ class ReviewImport extends ImportModel
     public $rules = [
         'name' => 'required',
         'content' => 'required',
-        'rating' => 'required|numeric'
+        'rating' => 'required'
     ];
 
     public $categoryNameCache = [];
+
 
     public function importData($results, $sessionKey = null)
     {
@@ -26,7 +27,7 @@ class ReviewImport extends ImportModel
         foreach ($results as $row => $data) {
             try {
 
-                if (!$name = array_get($data, 'name')) {
+                if (!array_get($data, 'name')) {
                     $this->logSkipped($row, 'Missing name');
                     continue;
                 }
@@ -39,7 +40,7 @@ class ReviewImport extends ImportModel
 
                 $reviewExists = $review->exists;
 
-                $except = ['id', 'categories', 'created_at'];
+                $except = ['id', 'categories','approved','created_at'];
 
                 foreach (array_except($data, $except) as $attribute => $value) {
 
@@ -49,6 +50,8 @@ class ReviewImport extends ImportModel
 
                     $review->{$attribute} = $value ?: null;
                 }
+
+                $review->approved = !!array_get($data,'approved');
 
                 if ($createdAt = array_get($data, 'created_at')) {
                     $review->created_at = Carbon::parse($createdAt);
