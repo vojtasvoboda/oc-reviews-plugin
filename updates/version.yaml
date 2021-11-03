@@ -11,3 +11,4 @@
 1.0.6 :
     - Change sort_order column type
     - change_sort_order_column_type.php
+1.0.7: Add import/export

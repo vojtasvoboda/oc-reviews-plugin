@@ -1,0 +1,30 @@
+import:
+  # Page title
+  title: Import categories
+
+  # Import List Column configuration
+  list: $/vojtasvoboda/reviews/models/categoryimport/columns.yaml
+
+  # Import Form Field configuration
+  form: $/vojtasvoboda/reviews/models/categoryimport/fields.yaml
+
+  # Import Model class
+  modelClass: VojtaSvoboda\Reviews\Models\CategoryImport
+
+  # Redirect when finished
+  redirect: vojtasvoboda/reviews/categories
+export:
+  # Page title
+  title: Export categories
+
+  # Output file name
+  fileName: categories.csv
+
+  # Export List Column configuration
+  list: $/vojtasvoboda/reviews/models/categoryexport/columns.yaml
+
+  # Export Model class
+  modelClass: VojtaSvoboda\Reviews\Models\CategoryExport
+
+  # Redirect when finished
+  redirect: vojtasvoboda/reviews/categories

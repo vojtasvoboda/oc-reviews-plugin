@@ -23,5 +23,17 @@
             data-stripe-load-indicator>
             <?= e(trans('backend::lang.list.delete_selected')) ?>
         </button>
+        <div class="btn-group">
+            <a
+                    href="<?= Backend::url('vojtasvoboda/reviews/reviews/export') ?>"
+                    class="btn btn-default oc-icon-download">
+                Export
+            </a>
+            <a
+                    href="<?= Backend::url('vojtasvoboda/reviews/reviews/import') ?>"
+                    class="btn btn-default oc-icon-upload">
+                Import
+            </a>
+        </div>
     </div>
 </div>
