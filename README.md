@@ -44,6 +44,8 @@ $facede->getNonApprovedReviews();
 $facade->findOne($value, $key);
 ```
 
+When using `storeReview`, check [Review validation rules](https://github.com/vojtasvoboda/oc-reviews-plugin/blob/master/models/Review.php#L32) has to be satisfied.
+
 ## TODO
 
 - [ ] frontend form for adding new review
