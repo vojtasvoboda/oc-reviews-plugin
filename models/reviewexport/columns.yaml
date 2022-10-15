@@ -4,7 +4,8 @@
 
 columns:
     id: ID
-    categories: Categories
+    category_names: Category names
+    category_ids: Category ids
     name: Author name
     email: Author email
     title: Title

@@ -13,11 +13,12 @@ class ReviewImport extends ImportModel
     public $rules = [
         'name' => 'required',
         'content' => 'required',
-        'rating' => 'required'
+        'rating' => 'required|numeric'
     ];
 
     public $categoryNameCache = [];
 
+    public $categoryIdCache = [];
 
     public function importData($results, $sessionKey = null)
     {
@@ -40,9 +41,14 @@ class ReviewImport extends ImportModel
 
                 $reviewExists = $review->exists;
 
-                $except = ['id', 'categories', 'approved', 'created_at'];
+                $except = ['id', 'category_names', 'category_ids','approved', 'created_at'];
 
                 foreach (array_except($data, $except) as $attribute => $value) {
+
+                    if (in_array($attribute, $review->getDates()) && empty($value)) {
+                        continue;
+                    }
+
                     $review->{$attribute} = $value ?: null;
                 }
 
@@ -52,10 +58,18 @@ class ReviewImport extends ImportModel
                     $review->created_at = Carbon::parse($createdAt);
                 }
 
-                $review->forceSave();
+                $review->save();
 
-                if ($categoryIds = $this->getCategoryIdsForReview($data)) {
-                    $review->categories()->sync($categoryIds, false);
+                if (array_get($data, 'category_ids')) {
+                    if ($categoryIds = $this->getCategoryIdsForReviewUsingIds($data)) {
+                        $review->categories()->sync($categoryIds, false);
+                    }
+                }
+
+                if (array_get($data, 'category_names') && !array_get($data, 'category_ids')) {
+                    if ($categoryIds = $this->getCategoryIdsForReviewUsingNames($data)) {
+                        $review->categories()->sync($categoryIds, false);
+                    }
                 }
 
                 if ($reviewExists) {
@@ -69,9 +83,33 @@ class ReviewImport extends ImportModel
         }
     }
 
-    protected function getCategoryIdsForReview($data)
+    protected function getCategoryIdsForReviewUsingIds($data)
     {
-        $categoryNames = $this->decodeArrayValue(array_get($data, 'categories'));
+        $categoryIds = $this->decodeArrayValue(array_get($data, 'category_ids'));
+
+        $ids = [];
+
+        foreach ($categoryIds as $id) {
+            if (!$id = trim($id)) {
+                continue;
+            }
+
+            if (isset($this->categoryIdCache[$id])) {
+                $ids[] = $this->categoryIdCache[$id];
+            } else {
+                $category = CategoryModel::find($id);
+                if($category) {
+                    $ids[] = $this->categoryIdCache[$id] = $category->id;
+                }
+            }
+        }
+
+        return $ids;
+    }
+
+    protected function getCategoryIdsForReviewUsingNames($data)
+    {
+        $categoryNames = $this->decodeArrayValue(array_get($data, 'category_names'));
 
         $ids = [];
 
@@ -84,7 +122,9 @@ class ReviewImport extends ImportModel
                 $ids[] = $this->categoryNameCache[$name];
             } else {
                 $category = CategoryModel::where('name', $name)->first();
-                $ids[] = $this->categoryNameCache[$name] = $category->id;
+                if($category) {
+                    $ids[] = $this->categoryNameCache[$name] = $category->id;
+                }
             }
         }
 

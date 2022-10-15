@@ -8,7 +8,8 @@ class ReviewExport extends ExportModel
     public $table = 'vojtasvoboda_reviews_reviews';
 
     protected $appends = [
-        'categories'
+        'category_names',
+        'category_ids',
     ];
 
     public $belongsToMany = [
@@ -32,12 +33,21 @@ class ReviewExport extends ExportModel
         return $result;
     }
 
-    public function getCategoriesAttribute()
+    public function getCategoryNamesAttribute()
     {
         if (!$this->review_categories) {
             return '';
         }
 
         return $this->encodeArrayValue($this->review_categories->lists('name'));
+    }
+
+    public function getCategoryIdsAttribute()
+    {
+        if (!$this->review_categories) {
+            return '';
+        }
+
+        return $this->encodeArrayValue($this->review_categories->lists('id'));
     }
 }

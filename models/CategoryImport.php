@@ -49,7 +49,7 @@ class CategoryImport extends ImportModel
 
                 $category->enabled = !!array_get($data,'enabled');
 
-                $category->forceSave();
+                $category->save();
 
                 if ($categoryExists) {
                     $this->logUpdated();
