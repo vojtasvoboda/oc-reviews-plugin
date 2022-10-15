@@ -44,11 +44,6 @@ class ReviewImport extends ImportModel
                 $except = ['id', 'category_names', 'category_ids','approved', 'created_at'];
 
                 foreach (array_except($data, $except) as $attribute => $value) {
-
-                    if (in_array($attribute, $review->getDates()) && empty($value)) {
-                        continue;
-                    }
-
                     $review->{$attribute} = $value ?: null;
                 }
 
