@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id: ID
+    category_names: Category names
+    category_ids: Category ids
+    name: Author name
+    email: Author email
+    title: Title
+    rating: Rating
+    content: Content
+    sort_order: Sort order
+    approved: Approved
+    created_at: Created at

@@ -1,0 +1,30 @@
+import:
+  # Page title
+  title: Import reviews
+
+  # Import List Column configuration
+  list: $/vojtasvoboda/reviews/models/reviewimport/columns.yaml
+
+  # Import Form Field configuration
+  form: $/vojtasvoboda/reviews/models/reviewimport/fields.yaml
+
+  # Import Model class
+  modelClass: VojtaSvoboda\Reviews\Models\ReviewImport
+
+  # Redirect when finished
+  redirect: vojtasvoboda/reviews/reviews
+export:
+  # Page title
+  title: Export reviews
+
+  # Output file name
+  fileName: reviews.csv
+
+  # Export List Column configuration
+  list: $/vojtasvoboda/reviews/models/reviewimport/columns.yaml
+
+  # Export Model class
+  modelClass: VojtaSvoboda\Reviews\Models\ReviewExport
+
+  # Redirect when finished
+  redirect: vojtasvoboda/reviews/reviews

@@ -12,11 +12,13 @@ class Categories extends Controller
         'Backend\Behaviors\FormController',
         'Backend\Behaviors\ListController',
         'Backend\Behaviors\ReorderController',
+        'Backend\Behaviors\ImportExportController'
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $reorderConfig = 'config_reorder.yaml';
+    public $importExportConfig = 'config_import_export.yaml';
 
     public $requiredPermissions = [
         'vojtasvoboda.reviews.categories',

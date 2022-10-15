@@ -1,7 +1,7 @@
 <?php namespace VojtaSvoboda\Reviews\Controllers;
 
-use BackendMenu;
 use Backend\Classes\Controller;
+use BackendMenu;
 
 /**
  * Reviews Back-end Controller
@@ -12,11 +12,13 @@ class Reviews extends Controller
         'Backend\Behaviors\FormController',
         'Backend\Behaviors\ListController',
         'Backend\Behaviors\ReorderController',
+        'Backend\Behaviors\ImportExportController'
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $reorderConfig = 'config_reorder.yaml';
+    public $importExportConfig = 'config_import_export.yaml';
 
     public function __construct()
     {

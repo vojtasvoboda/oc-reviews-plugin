@@ -1,0 +1,11 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    update_existing:
+        label: Update existing categories
+        comment: Check this box to update categories that have exactly the same ID
+        type: checkbox
+        default: false
+        span: left
